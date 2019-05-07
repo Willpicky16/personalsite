@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.work-experience-page {
+  .page-title {
+    margin-bottom: $margin-large;
+  }
+
+  .main-section {
+    height: $min-app-content-height;
+  }
+}

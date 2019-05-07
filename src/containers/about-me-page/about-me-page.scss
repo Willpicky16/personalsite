@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.about-me-page {
+  .page-title {
+    margin-bottom: $margin-large;
+  }
+
+  .main-section {
+    height: $min-app-content-height;
+  }
+}

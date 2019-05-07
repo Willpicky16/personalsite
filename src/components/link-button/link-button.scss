@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.link-button {
+  $height: 35px;
+
+  height: $height;
+  padding: 0 25px;
+  line-height: $height;
+  background-color: $color-brand-primary;
+  font-size: $font-size-large;
+  color: $color-text-inverse;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+
+  &:hover {
+    background-color: $color-brand-primary-hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    border-style: none;
+    background-color: $color-brand-primary-active;
+  }
+
+  .link-text {
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}

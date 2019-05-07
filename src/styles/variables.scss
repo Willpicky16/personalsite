@@ -1,0 +1,31 @@
+$color-brand-primary: #282c34;
+$color-brand-primary-hover: darken($color-brand-primary, 15%);
+$color-brand-primary-active: darken($color-brand-primary, 17%);
+$color-brand-primary-light: lighten($color-brand-primary, 15%);
+
+$color-text-inverse: white;
+$color-text-dark: black;
+$color-disabled: lightgrey;
+$color-input: lightgrey;
+$color-input-dark: darken(lightgrey, 15%);
+$color-error: red;
+
+$font-size-smallest: 10px;
+$font-size-small: 14px;
+$font-size: 16px;
+$font-size-large: 18px;
+$font-size-larger: 28px;
+$font-size-title: 50px;
+
+$button-size-small: 100px;
+
+$field-size-small: 150px;
+
+$margin-smallest: 1px;
+$margin-small: 5px;
+$margin-medium: 10px;
+$margin-large: 20px;
+
+$app-padding: 50px;
+$header-height: 75px;
+$min-app-content-height: calc(100vh - #{$header-height + 2 * $app-padding});

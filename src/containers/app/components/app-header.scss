@@ -1,0 +1,18 @@
+@import '../../../styles/variables.scss';
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  height: $header-height;
+  background-color: $color-brand-primary;
+  color: $color-text-inverse;
+  padding: 0 $margin-medium;
+
+  .brand {
+    display: inline-block;
+
+    .app-logo {
+      height: $header-height;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../../styles/variables.scss';
+
+.app {
+  .app-content {
+    $padding: $app-padding;
+
+    padding: $padding;
+    min-height: $min-app-content-height;
+  }
+}

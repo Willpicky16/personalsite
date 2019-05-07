@@ -1,0 +1,16 @@
+.home-page {
+  .link-wrapper {
+    $horizontal-padding: 25px;
+
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px $horizontal-padding;
+
+    .link-button {
+      width: calc(100% - (#{$horizontal-padding} * 2));
+      height: 75px;
+      line-height: 75px;
+    }
+  }
+}
