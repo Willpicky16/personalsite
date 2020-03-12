@@ -1,13 +1,14 @@
 import React from 'react';
 
-import logo from './logo.png';
+// import logo from './logo.png';
 
 import './app-header.scss';
 
-const AppHeader = ({ logout }) => (
+const AppHeader = () => (
   <div className="app-header">
     <div className="brand">
-      <img src={logo} className="app-logo" alt="logo" />
+      <h1>Will Pickering</h1>
+      {/* <img src={logo} className="app-logo" alt="logo" /> */}
     </div>
   </div>
 );

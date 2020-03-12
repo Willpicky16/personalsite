@@ -2,7 +2,9 @@ import React from 'react';
 
 import LinkButton from '../../components/link-button/link-button';
 
-import { WORK_EXPERIENCE, ABOUT_ME, PROJECTS, PHOTOS } from '../../constants/urls';
+import {
+  WORK_EXPERIENCE, ABOUT_ME, PROJECTS, PHOTOS,
+} from '../../constants/urls';
 
 import './home-page.scss';
 

@@ -6,13 +6,13 @@ import App from './containers/app/app';
 
 import * as serviceWorker from './serviceWorker';
 
-import './index.css';
+import './index.scss';
 
 ReactDOM.render(
-    <Router>
-        <App />
-    </Router>,
-    document.getElementById('root')
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('app'),
 );
 
 // If you want your app to work offline and load faster, you can change

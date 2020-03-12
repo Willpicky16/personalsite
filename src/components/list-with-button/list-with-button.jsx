@@ -11,32 +11,32 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import React from 'react';
 
 const ListWithButton = ({ items, onClick }) => (
-    <Grid container spacing={16}>
-        <Grid item xs={12} md={6}>
-            <div>
-                <List>
-                    {items.map(({ item, quantity }) => (
-                        <ListItem>
-                            <ListItemText primary={`${item} (${quantity})`} />
-                            <ListItemSecondaryAction>
-                                <IconButton onClick={() => onClick(item)} aria-label="AddShoppingCart">
-                                    <AddShoppingCartIcon />
-                                </IconButton>
-                            </ListItemSecondaryAction>
-                        </ListItem>
-                    ))}
-                </List>
-            </div>
-        </Grid>
+  <Grid container spacing={16}>
+    <Grid item xs={12} md={6}>
+      <div>
+        <List>
+          {items.map(({ item, quantity }) => (
+            <ListItem>
+              <ListItemText primary={`${item} (${quantity})`} />
+              <ListItemSecondaryAction>
+                <IconButton onClick={() => onClick(item)} aria-label="AddShoppingCart">
+                  <AddShoppingCartIcon />
+                </IconButton>
+              </ListItemSecondaryAction>
+            </ListItem>
+          ))}
+        </List>
+      </div>
     </Grid>
+  </Grid>
 );
 
 ListWithButton.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({
-        item: PropTypes.string.isRequired,
-        quantity: PropTypes.number.isRequired,
-    })),
-    onClick: PropTypes.func.isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    item: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+  })),
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ListWithButton;

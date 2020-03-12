@@ -14,7 +14,7 @@ const AppRouter = ({ logout }) => (
   <div className="app">
     <div className="app-content">
       <Switch>
-        {APP_ROUTES.map(route => (
+        {APP_ROUTES.map((route) => (
           <Route
             key={route.url || 'nomatch'}
             path={route.url}
