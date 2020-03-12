@@ -7,7 +7,7 @@
     "build:production": "webpack --config webpack.prod.js",
     "lint": "eslint src --ext .js --ext .jsx",
     "lint:styles": "stylelint \"src/**/*.scss\"",
-    "deploy": "yarn && yarn build:production && firebase deploy -P default"
+    "deploy": "yarn && yarn lint && yarn build:production && firebase deploy -P default"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
