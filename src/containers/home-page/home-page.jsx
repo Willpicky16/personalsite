@@ -1,28 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
-import LinkButton from '../../components/link-button/link-button';
-
-import {
-  WORK_EXPERIENCE, ABOUT_ME, PROJECTS, PHOTOS,
-} from '../../constants/urls';
+import Avatar from '@material-ui/core/Avatar';
 
 import './home-page.scss';
 
-const HomePage = () => (
-  <div className="home-page">
-    <div className="link-wrapper">
-      <LinkButton to={ABOUT_ME}>About Me</LinkButton>
-    </div>
-    <div className="link-wrapper">
-      <LinkButton to={WORK_EXPERIENCE}>Work Experience</LinkButton>
-    </div>
-    <div className="link-wrapper">
-      <LinkButton to={PROJECTS}>Projects</LinkButton>
-    </div>
-    <div className="link-wrapper">
-      <LinkButton to={PHOTOS}>Photos</LinkButton>
-    </div>
-  </div>
-);
+const styles = {
+  bigAvatar: {
+    margin: 10,
+    width: 100,
+    height: 100,
+    backgroundColor: 'grey',
+  },
+};
 
-export default HomePage;
+class HomePage extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className="home-page">
+        <Avatar alt="WP" src="src/assests/profile.jpg" className={classes.bigAvatar} />
+        <h1>Will Pickering</h1>
+        <p>Hello my name is Will and i am a Software Engineer currently working for Cloudit.</p>
+      </div>
+    );
+  }
+}
+
+export default withStyles(styles)(HomePage);
