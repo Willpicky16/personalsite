@@ -1,32 +1,26 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb",
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
+  "plugins": ["react", "jsx-a11y", "import"],
   "env": {
     "browser": true,
-    "jest": true
+    "jest": true,
+    "es6": true,
+    "node": true
   },
   "rules": {
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
-        "components": [
-          "Link"
-        ],
-        "specialLink": [
-          "to"
-        ]
+        "components": ["Link"],
+        "specialLink": ["to"]
       }
     ],
+    "react/jsx-curly-newline": 1,
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": [
-          "webpack.*.js"
-        ]
+        "devDependencies": ["webpack.*.js"]
       }
     ]
   }

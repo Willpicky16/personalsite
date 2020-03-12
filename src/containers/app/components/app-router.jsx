@@ -10,7 +10,7 @@ import {
 
 import './app-router.scss';
 
-const AppRouter = ({ logout }) => (
+const AppRouter = () => (
   <div className="app">
     <div className="app-content">
       <Switch>

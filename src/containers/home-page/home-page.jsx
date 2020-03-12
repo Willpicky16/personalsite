@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 import Avatar from '@material-ui/core/Avatar';
+
+import { withStyles } from '@material-ui/core/styles';
 
 import './home-page.scss';
 
@@ -31,5 +33,9 @@ class HomePage extends Component {
     );
   }
 }
+
+HomePage.propTypes = {
+  classes: PropTypes.shape().isRequired,
+};
 
 export default withStyles(styles)(HomePage);

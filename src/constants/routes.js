@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import HomePage from '../containers/home-page/home-page';
 import AboutMePage from '../containers/about-me-page/about-me-page';
 import WorkExperiencePage from '../containers/work-experience-page/work-experience-page';
