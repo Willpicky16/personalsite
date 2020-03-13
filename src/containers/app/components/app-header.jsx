@@ -18,13 +18,11 @@ const AppHeader = () => (
   <div>
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6">
-          Will Pickering
-        </Typography>
-        <Button component={Link} to={HOME} color="secondary">Home</Button>
-        <Button component={Link} to={WORK_EXPERIENCE} color="secondary">Work Experience</Button>
-        <Button component={Link} to={PROJECTS} color="secondary">Projects</Button>
-        <Button component={Link} to={PHOTOS} color="secondary">Photos</Button>
+        <Typography variant="h6" color="inherit">Will Pickering</Typography>
+        <Button component={Link} to={HOME} color="inherit">Home</Button>
+        <Button component={Link} to={WORK_EXPERIENCE} color="inherit">Work Experience</Button>
+        <Button component={Link} to={PROJECTS} color="inherit">Projects</Button>
+        <Button component={Link} to={PHOTOS} color="inherit">Photos</Button>
       </Toolbar>
     </AppBar>
   </div>
