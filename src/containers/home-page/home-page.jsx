@@ -28,7 +28,10 @@ class HomePage extends Component {
       <div className="home-page">
         <Avatar alt="WP" src="src/assests/profile.jpg" className={classes.bigAvatar} />
         <h1>Will Pickering</h1>
-        <p>Hello my name is Will and i am a Software Engineer currently working for Cloudit.</p>
+        <p>
+          Hello my name is Will and i am a Software Engineer currently working for Cloudit.
+          I am AWS certified in the developer associate.
+        </p>
       </div>
     );
   }
