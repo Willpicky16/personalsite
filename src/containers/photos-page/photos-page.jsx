@@ -9,24 +9,17 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 
 import PageTitle from '../../components/page-title/page-title';
 
-import './photos-page.scss';
-
 const styles = () => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    // backgroundColor: theme.palette.background.paper,
   },
   gridList: {
     flexWrap: 'nowrap',
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
-  // title: {
-  //   color: theme.palette.primary.light,
-  // },
   titleBar: {
     background:
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
@@ -87,7 +80,7 @@ class PhotosPage extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className="main-section">
+      <div>
         {
           tileData.map((data) => (
             <>

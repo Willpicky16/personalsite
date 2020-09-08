@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import PageTitle from '../../components/page-title/page-title';
 import InfoCard from '../../components/info-card/info-card';
 
-import './work-experience-page.scss';
-
 class WorkExperiencePage extends Component {
   constructor() {
     super();
@@ -13,7 +11,7 @@ class WorkExperiencePage extends Component {
 
   render() {
     return (
-      <div className="main-section">
+      <div>
         <PageTitle>Work Experience</PageTitle>
         <div>
           <InfoCard title="Cloudit - Software Engineer" subheader="January 2019 to Present - Whaley Bridge, Derbyshire" button>TODO</InfoCard>

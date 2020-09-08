@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
-
-import { withStyles } from '@material-ui/core/styles';
-
-import './home-page.scss';
+import { Avatar, Typography, withStyles } from '@material-ui/core';
 
 const styles = {
   bigAvatar: {
@@ -30,7 +25,7 @@ class HomePage extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className="home-page">
+      <div>
         <Avatar alt="WP" src="https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/profile.JPG?alt=media&token=33538fcb-95e5-4e6d-ae35-3f0e9be4503a" className={classes.bigAvatar} />
         <Typography variant="h2">Will Pickering</Typography>
         <Typography variant="body1">

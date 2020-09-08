@@ -14,8 +14,8 @@ import {
 const styles = (() => ({
   content: {
     width: `calc(100% - ${240}px)`,
-    marginLeft: 250,
-    marginTop: 70,
+    marginLeft: 260,
+    marginTop: 80,
   },
 }));
 

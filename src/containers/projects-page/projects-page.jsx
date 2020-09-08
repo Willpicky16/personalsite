@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import PageTitle from '../../components/page-title/page-title';
 import InfoCard from '../../components/info-card/info-card';
 
-import './projects-page.scss';
-
 class ProjectsPage extends Component {
   constructor() {
     super();
@@ -13,7 +11,7 @@ class ProjectsPage extends Component {
 
   render() {
     return (
-      <div className="main-section">
+      <div>
         <PageTitle>Projects</PageTitle>
         <div>
           <InfoCard title="Peazi" button>Peazi is online ordering system for pubs and bars.</InfoCard>
