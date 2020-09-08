@@ -10,12 +10,19 @@
     "deploy": "yarn && yarn lint && yarn build:production && firebase deploy -P default"
   },
   "dependencies": {
-    "@material-ui/core": "^3.9.3",
+    "@firebase/app-types": "^0.6.1",
+    "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^3.0.2",
+    "dotenv-webpack": "^2.0.0",
+    "firebase": "^7.19.1",
+    "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.0.0"
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",

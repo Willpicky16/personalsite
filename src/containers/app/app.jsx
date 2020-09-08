@@ -1,25 +1,34 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import { withStyles } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
 
 import AppHeader from './components/app-header';
 import AppDrawer from './components/app-drawer';
 import AppRouter from './components/app-router';
 
-const styles = (() => ({
-  root: {
-    display: 'flex',
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark', // Switching the dark mode on is a single property value change.
+    primary: {
+      main: '#42a5f5',
+    },
   },
-}));
+  typography: {
+    useNextVariants: true,
+  },
+});
 
-function App() {
-  return (
-    <div>
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Router>
       <AppHeader />
       <AppDrawer />
       <AppRouter />
-    </div>
-  );
-}
+    </Router>
+  </ThemeProvider>
+);
 
-export default withStyles(styles)(App);
+export default App;

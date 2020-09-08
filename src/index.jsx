@@ -1,30 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router } from 'react-router-dom';
-
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 
 import App from './containers/app/app';
 
+import rootReducer from './reducers/root-reducer';
+
+import initialiseFirebase from './helpers/initialise-firebase';
+
 import './index.scss';
 
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark', // Switching the dark mode on is a single property value change.
-    primary: {
-      main: '#42a5f5',
-    },
-  },
-  typography: {
-    useNextVariants: true,
-  },
-});
+initialiseFirebase();
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk),
+);
 
 ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
-    <Router>
-      <App />
-    </Router>
-  </MuiThemeProvider>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('app'),
 );
