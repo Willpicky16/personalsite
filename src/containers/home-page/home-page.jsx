@@ -15,6 +15,10 @@ const styles = {
     height: 100,
     backgroundColor: 'grey',
   },
+  image: {
+    width: 100,
+    height: 100,
+  },
 };
 
 class HomePage extends Component {
@@ -33,6 +37,7 @@ class HomePage extends Component {
           Hello my name is Will and i am a Software Engineer currently working for Cloudit.
           I am AWS certified in the developer associate.
         </Typography>
+        <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/aws-certified-developer-associate.png?alt=media&token=6b9bfd1d-66c2-4d39-a44e-dcf88b4ff72b" alt="AWS" />
       </div>
     );
   }
