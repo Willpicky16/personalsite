@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -7,7 +9,16 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 
+import getPhotoDataAction from '../../actions/get-photo-data';
+
 import PageTitle from '../../components/page-title/page-title';
+import Spinner from '../../components/spinner/spinner';
+
+import STORE_KEYS from '../../constants/store-keys';
+
+const {
+  PHOTO_DATA: { IS_PHOTO_DATA_LOADING, PHOTO_DATA },
+} = STORE_KEYS;
 
 const styles = () => ({
   root: {
@@ -26,63 +37,27 @@ const styles = () => ({
   },
 });
 
-const tileData = [
-  {
-    category: 'Night Photos',
-    photos: [
-      {
-        title: 'test',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-      {
-        title: 'test 2',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-      {
-        title: 'test 3',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-      {
-        title: 'test 4',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-    ],
-  },
-  {
-    category: 'Dog Photos',
-    photos: [
-      {
-        title: 'test',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-      {
-        title: 'test 2',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-      {
-        title: 'test 3',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-      {
-        title: 'test 4',
-        img: 'https://firebasestorage.googleapis.com/v0/b/personal-site-b7aac.appspot.com/o/photos%2FIMG_0947.jpg?alt=media&token=8b049490-ac53-4ef5-9961-39b9d54e3c5d',
-      },
-    ],
-  },
-];
-
 class PhotosPage extends Component {
   constructor() {
     super();
     this.state = {};
   }
 
+  componentDidMount() {
+    const { getPhotoData } = this.props;
+
+    getPhotoData();
+  }
+
   render() {
-    const { classes } = this.props;
+    const { classes, isPhotoDataLoading, photoData } = this.props;
+
+    if (isPhotoDataLoading) return <Spinner />;
+
     return (
       <div>
         {
-          tileData.map((data) => (
+          photoData.map((data) => (
             <>
               <PageTitle>{data.category}</PageTitle>
               <div className={classes.root}>
@@ -109,8 +84,27 @@ class PhotosPage extends Component {
   }
 }
 
-PhotosPage.propTypes = {
-  classes: PropTypes.shape().isRequired,
+const mapStateToProps = (state) => ({
+  isPhotoDataLoading: state.photoData.get(IS_PHOTO_DATA_LOADING),
+  photoData: state.photoData.get(PHOTO_DATA),
+});
+
+const mapDispatchToProps = {
+  getPhotoData: getPhotoDataAction,
 };
 
-export default withStyles(styles)(PhotosPage);
+PhotosPage.propTypes = {
+  classes: PropTypes.shape().isRequired,
+  isPhotoDataLoading: PropTypes.bool,
+  photoData: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  getPhotoData: PropTypes.func.isRequired,
+};
+
+PhotosPage.defaultProps = {
+  isPhotoDataLoading: false,
+};
+
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withStyles(styles),
+)(PhotosPage);
