@@ -11,16 +11,17 @@ import {
   APP_ROUTES,
 } from '../../../constants/routes';
 
-const styles = (() => ({
+const styles = ((theme) => ({
+  toolbar: theme.mixins.toolbar,
   content: {
-    width: `calc(100% - ${240}px)`,
-    marginLeft: 260,
-    marginTop: 80,
+    flexGrow: 1,
+    padding: theme.spacing(3),
   },
 }));
 
 const AppRouter = ({ classes }) => (
-  <div className={classes.content}>
+  <main className={classes.content}>
+    <div className={classes.toolbar} />
     <Switch>
       {APP_ROUTES.map((route) => (
         <Route
@@ -31,7 +32,7 @@ const AppRouter = ({ classes }) => (
         />
       ))}
     </Switch>
-  </div>
+  </main>
 );
 
 AppRouter.propTypes = {

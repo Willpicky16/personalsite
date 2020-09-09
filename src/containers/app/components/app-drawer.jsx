@@ -12,13 +12,6 @@ import PhotoSizeSelectActualIcon from '@material-ui/icons/PhotoSizeSelectActual'
 import { WORK_EXPERIENCE, PROJECTS, PHOTOS } from '../../../constants/urls';
 
 const styles = ((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    width: `calc(100% - ${240}px)`,
-    marginRight: 240,
-  },
   drawer: {
     width: 240,
     flexShrink: 0,

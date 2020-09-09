@@ -18,13 +18,11 @@ const styles = (() => ({
 const AppHeader = ({ classes }) => {
   const location = useLocation();
   return (
-    <div>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit">{getPageTitle(location.pathname)}</Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar>
+        <Typography variant="h6" noWrap>{getPageTitle(location.pathname)}</Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
