@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom';
 import {
   Avatar, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, withStyles, Typography,
 } from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import NotesIcon from '@material-ui/icons/Notes';
 import PhotoSizeSelectActualIcon from '@material-ui/icons/PhotoSizeSelectActual';
 
-import { WORK_EXPERIENCE, PROJECTS, PHOTOS } from '../../../constants/urls';
+import {
+  HOME, WORK_EXPERIENCE, PROJECTS, PHOTOS,
+} from '../../../constants/urls';
 
 const styles = ((theme) => ({
   drawer: {
@@ -54,6 +57,10 @@ const AppDrawer = ({ classes }) => (
     <Typography className={classes.subTitle} variant="body1">Software Engineer</Typography>
     <Divider />
     <List>
+      <ListItem component={Link} to={HOME} button>
+        <ListItemIcon><HomeIcon /></ListItemIcon>
+        <ListItemText primary="Home" />
+      </ListItem>
       <ListItem component={Link} to={WORK_EXPERIENCE} button>
         <ListItemIcon><WorkOutlineIcon /></ListItemIcon>
         <ListItemText primary="Work Experience" />
