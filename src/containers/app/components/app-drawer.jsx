@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import {
   Avatar, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, withStyles, Typography,
 } from '@material-ui/core';
-import HomeIcon from '@material-ui/icons/Home';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import NotesIcon from '@material-ui/icons/Notes';
-import PhotoSizeSelectActualIcon from '@material-ui/icons/PhotoSizeSelectActual';
+import PhotoSizeSelectActualOutlinedIcon from '@material-ui/icons/PhotoSizeSelectActualOutlined';
 
 import {
   HOME, WORK_EXPERIENCE, PROJECTS, PHOTOS,
@@ -58,7 +58,7 @@ const AppDrawer = ({ classes }) => (
     <Divider />
     <List>
       <ListItem component={Link} to={HOME} button>
-        <ListItemIcon><HomeIcon /></ListItemIcon>
+        <ListItemIcon><HomeOutlinedIcon /></ListItemIcon>
         <ListItemText primary="Home" />
       </ListItem>
       <ListItem component={Link} to={WORK_EXPERIENCE} button>
@@ -70,7 +70,7 @@ const AppDrawer = ({ classes }) => (
         <ListItemText primary="Projects" />
       </ListItem>
       <ListItem component={Link} to={PHOTOS} button>
-        <ListItemIcon><PhotoSizeSelectActualIcon /></ListItemIcon>
+        <ListItemIcon><PhotoSizeSelectActualOutlinedIcon /></ListItemIcon>
         <ListItemText primary="Photos" />
       </ListItem>
     </List>
