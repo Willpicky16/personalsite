@@ -1,26 +1,67 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 import PageTitle from '../../components/page-title/page-title';
 import InfoCard from '../../components/info-card/info-card';
+import Spinner from '../../components/spinner/spinner';
+
+import getProjectDataAction from '../../actions/get-project-data';
+
+import STORE_KEYS from '../../constants/store-keys';
+
+const {
+  PROJECT_DATA: { IS_PROJECT_DATA_LOADING, PROJECT_DATA },
+} = STORE_KEYS;
 
 class ProjectsPage extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  componentDidMount() {
+    const { getProjectData } = this.props;
+
+    getProjectData();
   }
 
   render() {
+    const { isProjectDataLoading, projectData } = this.props;
+
+    if (isProjectDataLoading) return <Spinner />;
+
     return (
       <div>
         <PageTitle>Projects</PageTitle>
         <div>
-          <InfoCard title="Peazi" button>Peazi is online ordering system for pubs and bars.</InfoCard>
-          <InfoCard title="Fitr" button>Fitr was an mobile app where users could find personal trainer sessions.</InfoCard>
-          <InfoCard title="Distribeat" button>Distribeat was an online music distribution service, which allowed music artists to get there music online.</InfoCard>
+          {
+            projectData
+              .map((project) => (
+                <InfoCard key={project.title} title={project.title}>
+                  {project.description}
+                </InfoCard>
+              ))
+          }
         </div>
       </div>
     );
   }
 }
 
-export default ProjectsPage;
+const mapStateToProps = (state) => ({
+  isProjectDataLoading: state.projectData.get(IS_PROJECT_DATA_LOADING),
+  projectData: state.projectData.get(PROJECT_DATA),
+});
+
+const mapDispatchToProps = {
+  getProjectData: getProjectDataAction,
+};
+
+ProjectsPage.propTypes = {
+  isProjectDataLoading: PropTypes.bool,
+  projectData: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  getProjectData: PropTypes.func.isRequired,
+};
+
+ProjectsPage.defaultProps = {
+  isProjectDataLoading: false,
+};
+
+export default compose(connect(mapStateToProps, mapDispatchToProps))(ProjectsPage);

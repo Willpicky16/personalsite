@@ -38,11 +38,6 @@ const styles = () => ({
 });
 
 class PhotosPage extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   componentDidMount() {
     const { getPhotoData } = this.props;
 
@@ -58,7 +53,7 @@ class PhotosPage extends Component {
       <div>
         {
           photoData.map((data) => (
-            <>
+            <React.Fragment key={data.category}>
               <PageTitle>{data.category}</PageTitle>
               <div className={classes.root}>
                 <GridList className={classes.gridList} cols={2.5}>
@@ -76,7 +71,7 @@ class PhotosPage extends Component {
                   ))}
                 </GridList>
               </div>
-            </>
+            </React.Fragment>
           ))
         }
       </div>
