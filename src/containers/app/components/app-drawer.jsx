@@ -3,12 +3,25 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import {
-  Avatar, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, withStyles, Typography,
+  Avatar,
+  Drawer,
+  Divider,
+  Grid,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  withStyles,
+  Typography,
+  IconButton,
 } from '@material-ui/core';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import NotesIcon from '@material-ui/icons/Notes';
 import PhotoSizeSelectActualOutlinedIcon from '@material-ui/icons/PhotoSizeSelectActualOutlined';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 import {
   HOME, WORK_EXPERIENCE, PROJECTS, PHOTOS,
@@ -40,6 +53,10 @@ const styles = ((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: 3,
+  },
+  icons: {
+    position: 'absolute',
+    bottom: 10,
   },
 }));
 
@@ -74,6 +91,22 @@ const AppDrawer = ({ classes }) => (
         <ListItemText primary="Photos" />
       </ListItem>
     </List>
+    <Grid
+      className={classes.icons}
+      container
+      direction="row"
+      justify="center"
+    >
+      <IconButton color="primary" target="_blank" href="https://www.linkedin.com/in/will-pickering-80266110b/" size="small">
+        <LinkedInIcon />
+      </IconButton>
+      <IconButton color="primary" target="_blank" href="https://twitter.com/BadKompany7" size="small">
+        <TwitterIcon />
+      </IconButton>
+      <IconButton color="primary" target="_blank" href="https://www.instagram.com/liamanthonyphotography/" size="small">
+        <InstagramIcon />
+      </IconButton>
+    </Grid>
   </Drawer>
 );
 
